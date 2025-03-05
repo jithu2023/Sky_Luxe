@@ -31,7 +31,6 @@ body {
   cursor: pointer;
 }
 
-/* Apply Montserrat to Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -112,7 +111,6 @@ h2 {
 /* Navbar Section */
 .navBar {
   position: fixed;
-  flex-direction: column;
   width: 100%;
   z-index: 1000;
 }
@@ -158,7 +156,8 @@ h2 {
 }
 
 .Logo {
-  width: 100px;
+  width: 90px;
+  margin-top: -0.5rem;
 }
 
 .NavBarMenu {
@@ -166,11 +165,11 @@ h2 {
   padding: 2rem;
   margin-top: 3rem;
   border-radius: 10px;
-  display: none; /* Initially hidden */
+  display: none;
 }
 
 .NavBarMenu.active {
-  display: block; /* Visible when active */
+  display: block;
 }
 
 .menu {
@@ -197,15 +196,6 @@ h2 {
   margin: 1rem auto 0;
 }
 
-.btnTwo {
-  display: none;
-}
-
-.toggleIcon .icon {
-  font-size: 30px;
-  color: var(--blackColor);
-}
-
 /* Media Queries */
 @media screen and (max-width: 768px) {
   .navBarTwo {
@@ -213,70 +203,191 @@ h2 {
     align-items: flex-start;
     gap: 1rem;
     position: relative;
+    height: 4rem;
   }
-  .logoDiv {
-    position: absolute;
-    top: 0rem;
-    left: 0rem;
+  .navBarTwo.scrolled {
+    background: var(--SecondaryColor);
+    transition: var(--transition);
   }
-  .toggleIcon {
+  .navBarTwo .logoDiv {
     position: absolute;
-    top: 2rem;
+    top: 0;
+    left: 0;
+  }
+  .navBarTwo .toggleIcon {
+    position: absolute;
+    top: 1.5rem;
     right: 1rem;
     cursor: pointer;
   }
-  .NavBarMenu {
+  .navBarTwo .NavBarMenu {
     position: absolute;
-    top: 6rem; /* Adjusted to position slightly lower than logo and toggle icon */
+    top: 6rem;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
     margin-top: 0;
     padding: 1.5rem;
   }
-  .menu {
+  .navBarTwo .menu {
+    display: flex;
     flex-direction: column;
     gap: 1rem;
     text-align: center;
   }
-  .listItem {
+  .navBarTwo .listItem {
     padding: 0.5rem 0;
   }
-  .btnOne {
+  .navBarTwo .btnOne {
     margin: 1rem auto 0;
   }
-}
-.home {
-  padding: 10rem;
-  text-align: center;
-  gap: 2rem;
-  flex-direction: column;
-}
-.home .mainText {
-  color: var(--blackColor);
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 2.5rem;
-}
-.home .homeImages {
-  width: 100%;
-  margin: 1rem auto 0;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border-radius: 5rem;
-}
-.home .homeImages .videoDiv {
-  width: 100%;
-}
-.home .homeImages .videoDiv .video {
-  border-radius: 8rem;
-}
-.home .homeImages .plane {
-  position: absolute;
-  width: 100%;
-  top: 5%;
-  left: 1%;
+  .home {
+    padding: 10rem;
+    text-align: center;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .home .mainText {
+    color: var(--blackColor);
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 2.5rem;
+  }
+  .home .homeImages {
+    display: flex;
+    width: 100%;
+    margin: 1rem auto 0;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 5rem;
+  }
+  .home .homeImages .videoDiv {
+    width: 100%;
+  }
+  .home .homeImages .videoDiv .video {
+    border-radius: 8rem;
+  }
+  .home .homeImages .plane {
+    position: absolute;
+    width: 100%;
+    top: 5%;
+    left: 1%;
+  }
+  .search .sectionContainer {
+    width: 100%;
+    padding: 1.5rem;
+    border: 1px solid var(--greyBg);
+    border-radius: 16px;
+    row-gap: 2rem;
+    margin-top: -100px;
+  }
+  .search .sectionContainer .btns {
+    background-color: var(--SecondaryColor);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+  .search .sectionContainer .btns .singleButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 13px;
+    border-radius: 3rem;
+    width: 80%;
+    text-align: center;
+  }
+  .search .sectionContainer .btns .singleButton:hover {
+    background-color: var(--PrimaryColor);
+    color: var(--whiteColor);
+    font-weight: 500;
+    transition: 0.4s ease;
+  }
+  .search .sectionContainer .active {
+    background: var(--PrimaryColor);
+    color: var(--whiteColor);
+    font-weight: 500;
+  }
+  .search .sectionContainer .searchInputs {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 1.5rem;
+  }
+  .search .sectionContainer .searchInputs .singleInput {
+    display: flex;
+    align-items: center;
+  }
+  .search .sectionContainer .searchInputs .singleInput .iconDiv {
+    padding: 16px 10px;
+    border-radius: 3rem;
+    background-color: var(--SecondaryColor);
+    margin-right: 1rem;
+  }
+  .search .sectionContainer .searchInputs .singleInput .iconDiv .icon {
+    color: var(--blackColor);
+    opacity: 0.7;
+  }
+  .search .sectionContainer .searchInputs .singleInput .texts h4 {
+    padding-top: 0;
+    padding-bottom: 0.7rem;
+    color: var(--blackColor);
+    font-weight: 700;
+  }
+  .search .sectionContainer .searchInputs .singleInput .texts input {
+    width: 95%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+  .search .sectionContainer .searchInputs .singleInput .texts input::placeholder {
+    font-size: 12px;
+    opacity: 0.5;
+  }
+  .support .sectionContainer .tittlesDiv {
+    text-align: center;
+  }
+  .support .sectionContainer .tittlesDiv small {
+    letter-spacing: 0.8rem;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: var(--blackColor);
+    line-height: 1.5rem;
+  }
+  .support .sectionContainer .infoDiv {
+    margin-top: 2rem;
+    gap: 1.5rem;
+  }
+  .support .sectionContainer .infoDiv .textDiv {
+    gap: 1.5rem;
+  }
+  .support .sectionContainer .infoDiv .textDiv .singleInfo .number {
+    background: var(--PrimaryColor);
+    padding: 5px 12px;
+    width: 40px;
+    border-radius: 3rem;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--whiteColor);
+  }
+  .support .sectionContainer .infoDiv .textDiv .singleInfo .colorOne {
+    background: var(--colorOne);
+  }
+  .support .sectionContainer .infoDiv .textDiv .singleInfo .colorTwo {
+    background: var(--colorOne);
+  }
+  .support .sectionContainer .infoDiv .imgDiv {
+    margin: auto;
+  }
+  .support .sectionContainer .infoDiv .imgDiv img {
+    width: 100%;
+    max-width: 420px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

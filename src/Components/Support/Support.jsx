@@ -2,7 +2,10 @@ import React from 'react'
 
 function Support() {
   return (
-    <div>Support</div>
+    <div className='support container section'>
+
+
+    </div>
   )
 }
 
