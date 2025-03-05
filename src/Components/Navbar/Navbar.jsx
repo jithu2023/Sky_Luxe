@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SiConsul } from "react-icons/si";
 import { BsPhoneVibrate } from "react-icons/bs";
 import { AiOutlineGlobal } from "react-icons/ai";
@@ -8,11 +8,26 @@ import wlogo from '../../assets/wlogo.png';
 function Navbar() {
   // State to manage the visibility of NavBarMenu
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Function to toggle the menu visibility
   const toggleMenu = () => {
     setIsMenuVisible(!isMenuVisible);
   };
+
+  // Function to track scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="navBar">
@@ -38,7 +53,7 @@ function Navbar() {
       </div>
 
       {/* Main Navigation Bar */}
-      <div className="navBarTwo flex">
+      <div className={`navBarTwo flex ${isScrolled ? 'scrolled' : ''}`}>
         {/* Logo on Top-Left */}
         <div className="logoDiv">
           <img src={wlogo} className="Logo" alt="Logo" /> {/* Added alt attribute */}

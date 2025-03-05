@@ -32,7 +32,6 @@ body {
   cursor: pointer;
 }
 
-/* Apply Montserrat to Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -113,7 +112,6 @@ h2 {
 /* Navbar Section */
 .navBar {
   position: fixed;
-  flex-direction: column;
   width: 100%;
   z-index: 1000;
 }
@@ -159,7 +157,8 @@ h2 {
 }
 
 .Logo {
-  width: 100px;
+  width: 90px;
+  margin-top: -0.5rem;
 }
 
 .NavBarMenu {
@@ -167,11 +166,11 @@ h2 {
   padding: 2rem;
   margin-top: 3rem;
   border-radius: 10px;
-  display: none; /* Initially hidden */
+  display: none;
 }
 
 .NavBarMenu.active {
-  display: block; /* Visible when active */
+  display: block;
 }
 
 .menu {
@@ -197,16 +196,6 @@ h2 {
   display: block;
   margin: 1rem auto 0;
 }
-
-.btnTwo {
-  display: none;
-}
-
-.toggleIcon .icon {
-  font-size: 30px;
-  color: var(--blackColor);
-}
-
 /* Media Queries */
 @media screen and (max-width: 768px) {
   .navBarTwo {
@@ -214,83 +203,236 @@ h2 {
     align-items: flex-start;
     gap: 1rem;
     position: relative;
-  }
+    height: 4rem;
 
-  .logoDiv {
-    position: absolute;
-    top: 0rem;
-    left: 0rem;
-  }
+    &.scrolled {
+        background: var(--SecondaryColor);
+        transition: var(--transition);
+    }
 
-  .toggleIcon {
-    position: absolute;
-    top: 2rem;
-    right: 1rem;
-    cursor: pointer;
-  }
+    .logoDiv {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 
-  .NavBarMenu {
-    position: absolute;
-    top: 6rem; /* Adjusted to position slightly lower than logo and toggle icon */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    margin-top: 0;
-    padding: 1.5rem;
-  }
+    .toggleIcon {
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+        cursor: pointer;
+    }
 
-  .menu {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
+    .NavBarMenu {
+        position: absolute;
+        top: 6rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        margin-top: 0;
+        padding: 1.5rem;
+    }
 
-  .listItem {
-    padding: 0.5rem 0;
-  }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
 
-  .btnOne {
-    margin: 1rem auto 0;
-  }
+    .listItem {
+        padding: 0.5rem 0;
+    }
+
+    .btnOne {
+        margin: 1rem auto 0;
+    }
 }
 
 
-.home{
-  padding: 10rem;
-  text-align: center;
-  gap: 2rem;
-  flex-direction: column;
+  .home {
+    padding: 10rem;
+    text-align: center;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
 
-  .mainText{
-    color :var(--blackColor);
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 2.5rem;
+    .mainText {
+      color: var(--blackColor);
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 2.5rem;
+    }
 
-  }
+    .homeImages {
+      display: flex;
+      width: 100%;
+      margin: 1rem auto 0;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 5rem;
 
-  .homeImages{
-    width:100%;
-    margin :1rem auto 0;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-radius: 5rem;
+      .videoDiv {
+        width: 100%;
 
+        .video {
+          border-radius: 8rem;
+        }
+      }
 
-    .videoDiv{
-      width:100%;
-      .video{
-        border-radius: 8rem;
+      .plane {
+        position: absolute;
+        width: 100%;
+        top: 5%;
+        left: 1%;
       }
     }
-    .plane{
-      position:absolute;
-      width:100%;
-      top:5%;
-      left:1%;
+  }
+
+  .search {
+    .sectionContainer {
+      width: 100%;
+      padding: 1.5rem;
+      border: 1px solid var(--greyBg);
+      border-radius: 16px;
+      row-gap: 2rem;
+      margin-top:-100px;
+
+      .btns {
+        background-color: var(--SecondaryColor);
+        padding: 0.5rem;
+        border-radius: 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+
+        .singleButton {
+          padding: 0.8rem 1.5rem;
+          font-size: 13px;
+          border-radius: 3rem;
+          width: 80%;
+          text-align: center;
+
+          &:hover {
+            background-color: var(--PrimaryColor);
+            color: var(--whiteColor);
+            font-weight: 500;
+            transition: 0.4s ease;
+          }
+        }
+      }
+
+      .active {
+        background: var(--PrimaryColor);
+        color: var(--whiteColor);
+        font-weight: 500;
+      }
+
+      .searchInputs {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        margin-top:2rem;
+        gap: 1.5rem;
+
+        .singleInput {
+          display: flex;
+          align-items: center;
+
+          .iconDiv {
+            padding: 16px 10px;
+            border-radius: 3rem;
+            background-color: var(--SecondaryColor);
+            margin-right: 1rem;
+
+            .icon {
+              color: var(--blackColor);
+              opacity: 0.7;
+            }
+          }
+
+          .texts {
+            h4 {
+              padding-top: 0;
+              padding-bottom: 0.7rem;
+              color: var(--blackColor);
+              font-weight: 700;
+            }
+
+            input {
+              width: 95%;
+              border: none;
+              outline: none;
+              background-color: transparent;
+
+              &::placeholder {
+                font-size: 12px;
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
     }
   }
 
 
-}
+
+  .support{
+    .sectionContainer{
+      .tittlesDiv{
+        text-align: center;
+        small{
+          letter-spacing: .8rem;
+          text-transform: uppercase;
+          font-size: 13px;
+          color: var(--blackColor);
+          line-height: 1.5rem;
+        }
+      }
+
+      .infoDiv{
+        margin-top: 2rem;
+        gap: 1.5rem;
+
+        .textDiv{
+          gap:1.5rem;
+             
+
+          .singleInfo{
+            .number{
+              background: var(--PrimaryColor);
+              padding: 5px 12px;
+              width:40px;
+              border-radius: 3rem;
+              text-align: center;
+              font-size: 13px;
+              font-weight: 700;
+              color: var(--whiteColor);
+            }
+            .colorOne{
+              background: var(--colorOne);
+
+            }
+            .colorTwo{
+              background: var(--colorOne);
+              
+            }
+          }
+          }
+          .imgDiv{
+            margin: auto;
+            img{
+              width:100%;
+              max-width: 420px;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
