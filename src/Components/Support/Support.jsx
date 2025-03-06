@@ -1,4 +1,5 @@
 import React from 'react'
+import gridImage from '../../assets/gridImage.png'
 
 function Support() {
   return (
@@ -21,26 +22,22 @@ function Support() {
               <h4>Travel requirement for Dubai</h4>
               <p>Find help with booking and travel plans, see what to expect along the journey to your Fav Destinaion!</p>
               </div>
-            <div className="singleInfo">
-              <span className='number'>1</span>
-              <h4>Travel requirement for Dubai</h4>
+            <div className="singleInfo ">
+              <span className='number colorOne'>2</span>
+              <h4>Chaffeur service's at your arrival</h4>
               <p>Find help with booking and travel plans, see what to expect along the journey to your Fav Destinaion!</p>
               </div>
-            <div className="singleInfo">
-              <span className='number'>1</span>
-              <h4>Travel requirement for Dubai</h4>
+            <div className="singleInfo ">
+              <span className='number colorTwo'>3</span>
+              <h4>Multi-Risk travel Insurance</h4>
               <p>Find help with booking and travel plans, see what to expect along the journey to your Fav Destinaion!</p>
               </div>
-            <div className="singleInfo">
-              <span className='number'>1</span>
-              <h4>Travel requirement for Dubai</h4>
-              <p>Find help with booking and travel plans, see what to expect along the journey to your Fav Destinaion!</p>
-              </div>
+      
 
 
           </div>
            <div className="imgDiv">
-            <img src=""/>
+            <img src={gridImage}/>
            </div>
 
         </div>
