@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Spartan:wght@300;400;500&display=swap");
 * {
   padding: 0;
@@ -10,7 +11,7 @@
   --PrimaryColor: hsl(225, 56%, 48%);
   --SecondaryColor: hsl(189, 17%, 95%);
   --colorOne: hsl(15, 74%, 70%);
-  --colorTwo: hsl(28, 100%, 82%);
+  --colorTwo: hsl(28, 63%, 69%);
   --HoverColor: hsl(225, 56%, 59%);
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(0, 0%, 12%);
@@ -379,7 +380,7 @@ h2 {
     background: var(--colorOne);
   }
   .support .sectionContainer .infoDiv .textDiv .singleInfo .colorTwo {
-    background: var(--colorOne);
+    background: var(--colorTwo);
   }
   .support .sectionContainer .infoDiv .imgDiv {
     margin: auto;
@@ -387,6 +388,81 @@ h2 {
   .support .sectionContainer .infoDiv .imgDiv img {
     width: 100%;
     max-width: 420px;
+  }
+  .info {
+    background: var(--SecondaryColor);
+    padding: 4rem 0;
+  }
+  .info .infoContainer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1.5rem;
+  }
+  .info .infoContainer .titleDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .info .infoContainer .cardsDiv {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    justify-content: center;
+  }
+  .info .infoContainer .cardsDiv .singleCard {
+    background: var(--whiteColor);
+    padding: 3rem 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    max-width: 280px;
+    margin: auto;
+    gap: 2rem; /* Increased spacing */
+    /* ✅ ADDED SPACE BELOW ICON */
+  }
+  .info .infoContainer .cardsDiv .singleCard:hover {
+    transform: translateY(-5px);
+  }
+  .info .infoContainer .cardsDiv .singleCard .iconDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background: var(--PrimaryColor);
+    width: 65px;
+    height: 65px;
+    padding: 1.2rem;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+  }
+  .info .infoContainer .cardsDiv .singleCard .iconDiv .icon {
+    color: var(--whiteColor);
+    font-size: 2rem; /* Slightly larger icon */
+  }
+  .info .infoContainer .cardsDiv .singleCard .iconDiv {
+    margin-bottom: 1.8rem; /* Ensures space between icon and title */
+  }
+  .info .infoContainer .cardsDiv .singleCard .cardTitle {
+    color: var(--blackColor);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem; /* Keeps spacing consistent */
+  }
+  .info .infoContainer .cardsDiv .singleCard p {
+    color: var(--grayColor);
+    font-size: 0.95rem;
+    margin-top: 2rem;
+  }
+  .info .infoContainer .cardsDiv .singleCard .colorOne {
+    background: var(--colorOne);
+  }
+  .info .infoContainer .cardsDiv .singleCard .colorTwo {
+    background: var(--colorTwo);
   }
 }
 
