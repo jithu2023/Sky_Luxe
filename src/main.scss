@@ -522,5 +522,47 @@ h2 {
         }
       }
     }
+
+
+    .lounge {
+  .sectionContainer {
+    gap: 1.5rem;
+
+    .imgDiv {
+      margin: auto;
+      align-items: center;
+
+      img {
+        width: 80%;
+        max-width: 430px;
+        margin-left: 2rem;
+      }
+    }
+
+    .textDiv {
+      h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--blackColor);
+      }
+    }
+
+    .grids {
+      margin-top: 1rem;
+      gap: 1.5rem;
+
+      .singleGrid {
+        .gridTitle {
+          display: block;
+          padding-bottom: 0.5rem;
+          font-weight: 500;
+          color: var(--blackColor);
+        }
+      }
+    }
+  }
+}
+
            }
 
+    

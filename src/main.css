@@ -464,6 +464,33 @@ h2 {
   .info .infoContainer .cardsDiv .singleCard .colorTwo {
     background: var(--colorTwo);
   }
+  .lounge .sectionContainer {
+    gap: 1.5rem;
+  }
+  .lounge .sectionContainer .imgDiv {
+    margin: auto;
+    align-items: center;
+  }
+  .lounge .sectionContainer .imgDiv img {
+    width: 80%;
+    max-width: 430px;
+    margin-left: 2rem;
+  }
+  .lounge .sectionContainer .textDiv h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--blackColor);
+  }
+  .lounge .sectionContainer .grids {
+    margin-top: 1rem;
+    gap: 1.5rem;
+  }
+  .lounge .sectionContainer .grids .singleGrid .gridTitle {
+    display: block;
+    padding-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--blackColor);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
