@@ -562,7 +562,106 @@ h2 {
     }
   }
 }
+.travelers {
+  .sectionContainer {
+    text-align: center;
 
-           }
+    .travelersContainer {
+      margin-top: 1rem;
+      gap: 1.5rem;
 
+      .singleTraveler {
+        position: relative;
+        height: 280px;
+        width: 85%;
+        max-width: 250px; // Increased from 20px, ensuring proper visibility
+        overflow: hidden;
+        border-radius: 8rem;
+        gap: 1rem;
+        margin: auto;
+
+        .destinationImage {
+          position: absolute;
+          height: 200%; // Increased size significantly
+          width: 140%;
+          top: -40%; // Adjusted position to keep it centered
+          left: -40%;
+          object-fit: cover;
+        }
+
+        .travelerImage {
+          position: absolute;
+          height: 50px;
+          width: 50px;
+          object-fit: cover;
+          border-radius: 50%;
+          bottom: 30px;
+          left: 40%;
+          transform: translateX(-50%);
+          border: 5px solid rgba(225, 225, 225, 0.635);
+          transition: 0.5s ease-in-out;
+          animation: floating 2.3s infinite;
+        }
+
+        @keyframes floating {
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(8px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+
+        .travelerName {
+          position: absolute;
+          bottom: 100%;
+          width: 100%;
+          background: var(--whiteColor);
+          padding: 1.5rem 1rem;
+          transition: var(--transition);
+          animation: animatedBorders 2.3s infinite;
+
+          span {
+            display: block;
+            color: black;
+            font-weight: 700;
+          }
+
+          p {
+            color: var(--PrimaryColor);
+            font-style: italic;
+          }
+        }
+
+        @keyframes animatedBorders {
+          0% {
+            border-radius: 0rem;
+          }
+          50% {
+            border-radius: 8rem;
+          }
+          100% {
+            border-radius: 0rem;
+          }
+        }
+
+        &:hover {
+          .travelerName {
+            bottom: 0;
+            transition: 1s ease-in-out;
+          }
+          .travelerImage {
+            bottom: 110px;
+            transition: 1s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+}
     

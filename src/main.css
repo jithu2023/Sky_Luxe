@@ -491,6 +491,92 @@ h2 {
     font-weight: 500;
     color: var(--blackColor);
   }
+  .travelers .sectionContainer {
+    text-align: center;
+  }
+  .travelers .sectionContainer .travelersContainer {
+    margin-top: 1rem;
+    gap: 1.5rem;
+  }
+  .travelers .sectionContainer .travelersContainer .singleTraveler {
+    position: relative;
+    height: 280px;
+    width: 85%;
+    max-width: 250px;
+    overflow: hidden;
+    border-radius: 8rem;
+    gap: 1rem;
+    margin: auto;
+  }
+  .travelers .sectionContainer .travelersContainer .singleTraveler .destinationImage {
+    position: absolute;
+    height: 200%;
+    width: 140%;
+    top: -40%;
+    left: -40%;
+    object-fit: cover;
+  }
+  .travelers .sectionContainer .travelersContainer .singleTraveler .travelerImage {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    bottom: 30px;
+    left: 40%;
+    transform: translateX(-50%);
+    border: 5px solid rgba(225, 225, 225, 0.635);
+    transition: 0.5s ease-in-out;
+    animation: floating 2.3s infinite;
+  }
+  @keyframes floating {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  .travelers .sectionContainer .travelersContainer .singleTraveler .travelerName {
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    background: var(--whiteColor);
+    padding: 1.5rem 1rem;
+    transition: var(--transition);
+    animation: animatedBorders 2.3s infinite;
+  }
+  .travelers .sectionContainer .travelersContainer .singleTraveler .travelerName span {
+    display: block;
+    color: black;
+    font-weight: 700;
+  }
+  .travelers .sectionContainer .travelersContainer .singleTraveler .travelerName p {
+    color: var(--PrimaryColor);
+    font-style: italic;
+  }
+  @keyframes animatedBorders {
+    0% {
+      border-radius: 0rem;
+    }
+    50% {
+      border-radius: 8rem;
+    }
+    100% {
+      border-radius: 0rem;
+    }
+  }
+  .travelers .sectionContainer .travelersContainer .singleTraveler:hover .travelerName {
+    bottom: 0;
+    transition: 1s ease-in-out;
+  }
+  .travelers .sectionContainer .travelersContainer .singleTraveler:hover .travelerImage {
+    bottom: 110px;
+    transition: 1s ease-in-out;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
