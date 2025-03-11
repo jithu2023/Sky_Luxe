@@ -19,8 +19,8 @@ function App() {
       <Info/>
       <Lounge/>
       <Travelers/>
-      {/* <Subscribers/>
-      <Footer/> */}
+      <Subscribers/>
+      {/* <Footer/> */}
     </div>
   )
 }
